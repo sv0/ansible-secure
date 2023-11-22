@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   author: Slavik Svyrydiuk
+  role_name: secure
   namespace: sv0
   description: Improve the server security
   company: Svyrydiuk
