@@ -1,0 +1,14 @@
+---
+- name: Create /etc/ssh/sshd_config.d
+  file:
+    path: /etc/ssh/sshd_config.d
+    state: directory
+    mode: 0700
+    owner: root
+    group: root
+
+- name: Restrict key exhcange
+  template:
+    src: ssh_audit_hardening.conf.j2
+    dest: /etc/ssh/sshd_config.d/ssh_audit_hardening.conf
+  # notify: Restart sshd

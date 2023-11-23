@@ -1,2 +1,4 @@
 ---
-# defaults file for secure
+# install and configure rootkit hunter
+# https://rkhunter.sourceforge.net/
+secure_rkhunter: true
