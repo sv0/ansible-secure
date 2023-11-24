@@ -69,6 +69,7 @@ jobs:
           PY_COLORS: '1'
 
   galaxy:
+    name: Galaxy
     runs-on: ubuntu-latest
     if:
       contains('
