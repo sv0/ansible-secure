@@ -64,6 +64,7 @@ jobs:
           molecule test
         env:
           ANSIBLE_FORCE_COLOR: '1'
+          ANSIBLE_REMOTE_TMP: '/tmp'
           ANSIBLE_VERBOSITY: '2'
           MOLECULE_DEBUG: '1'
           PY_COLORS: '1'
