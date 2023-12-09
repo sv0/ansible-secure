@@ -1,0 +1,18 @@
+RUN_DAILY="true"
+RUN_DAILY_OPTS="-q"
+DIFF_MODE="false"
+FILTER="sed -re 's![[:alnum:]]+: PACKET SNIFFER\(((/lib/systemd/systemd-networkd|(/usr)?/sbin/(dhclient|dhcpc?d[0-9]*|wpa_supplicant|NetworkManager))\[[0-9]+\](, )?)+\)!<interface>: PACKET SNIFFER\([systemd-networkd|dhclient|dhcpd|dhcpcd|wpa_supplicant|NetworkManager]{PID}\)!' -e 's/(! [[:alnum:]+-]+)\s+[0-9]+/\1 {PID}/'"
+
+## If $IGNORE_FILE exists then lines of output matching patterns that
+## appear in $IGNORE_FILE are removed from the output. Each line in
+## $IGNORE_FILE interpreted as an extended regexp, see grep(1). If
+## $IGNORE_FILE is empty (the default) or does not exist then no
+## filtering is done.
+#
+# This is done after $FILTER - you can use either or both. IGNORE_FILE
+# is slightly simpler but slightly less powerfull than FILTER as you
+# can only hide, not change output.
+#
+# The default is /etc/chkrootkit/chkrootkit.ignore (which is empty by
+# default, meaning nothing is ignored)
+IGNORE_FILE="/etc/chkrootkit/chkrootkit.ignore"
