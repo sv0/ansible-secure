@@ -2,3 +2,14 @@
 # install and configure rootkit hunter
 # https://rkhunter.sourceforge.net/
 secure_rkhunter: true
+
+secure_rkhunter_scriptwhitelist:
+  - /usr/bin/egrep
+  - /usr/bin/fgrep
+  - /usr/bin/which
+
+# install and configure chkrootkit
+secure_chkrootkit: true
+
+secure_chkrootkit_ignore_pattern_list:
+  - "^br-[0-9a-f]+: not promisc and no packet sniffer sockets$"
