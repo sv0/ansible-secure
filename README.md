@@ -1,6 +1,8 @@
 Secure
 ======
 
+[![CI](https://github.com/sv0/ansible-secure/workflows/CI/badge.svg?event=push)](https://github.com/sv0/ansible-secure/actions?query=workflow%3ACI)
+
 This ansible role installs the following tools and utils to harden server security:
 
 * [Rootkit Hunter](http://rkhunter.sourceforge.net)
