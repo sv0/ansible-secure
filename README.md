@@ -1,7 +1,6 @@
 Secure
 ======
-
-[![CI](https://github.com/sv0/ansible-secure/workflows/CI/badge.svg?event=push)](https://github.com/sv0/ansible-secure/actions?query=workflow%3ACI)
+[![CI](https://github.com/sv0/ansible-secure/actions/workflows/main.yml/badge.svg)](https://github.com/sv0/ansible-secure/actions/workflows/main.yml)
 
 This ansible role installs the following tools and utils to harden server security:
 
