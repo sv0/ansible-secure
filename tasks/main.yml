@@ -1,15 +1,25 @@
 ---
 - name: Install required packages
   ansible.legacy.package:
-    name: grep
-
-- name: Install Rootkit Hunter
-  ansible.legacy.package:
     name:
-      - rkhunter
-      - chkrootkit
+      - grep
+      - curl
+
+- name: Import rkhunter tasks
+  ansible.builtin.import_tasks:
+    file: rkhunter.yml
+  tags:
+    - rkhunter
   when:
     - secure_rkhunter
+
+- name: Import chkrootkit tasks
+  ansible.builtin.import_tasks:
+    file: chkrootkit.yml
+  tags:
+    - chkrootkit
+  when:
+    - secure_chkrootkit
 
 - name: Secure SSH
   ansible.builtin.import_tasks:
