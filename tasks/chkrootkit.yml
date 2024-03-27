@@ -1,0 +1,27 @@
+---
+- name: Install chkrootkit
+  ansible.legacy.package:
+    name:
+      - chkrootkit
+
+- name: Create /etc/chkrootkit
+  ansible.builtin.file:
+    path: /etc/chkrootkit
+    state: directory
+    mode: 0700
+
+- name: Create /etc/chkrootkit/chkrootkit.conf
+  ansible.builtin.template:
+    src: chkrootkit.conf.j2
+    dest: /etc/chkrootkit/chkrootkit.conf
+    backup: true
+    owner: root
+    mode: 0600
+
+- name: Create /etc/chkrootkit/chkrootkit.ignore
+  ansible.builtin.template:
+    src: chkrootkit.ignore.j2
+    dest: /etc/chkrootkit/chkrootkit.ignore
+    backup: true
+    owner: root
+    mode: 0600
