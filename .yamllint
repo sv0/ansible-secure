@@ -1,7 +1,8 @@
 ---
-# Based on ansible-lint config
 extends: default
 
-rules:
-  new-lines:
-    type: unix
+ignore: |
+  tests/
+  .tox
+  *.bak
+  .venv

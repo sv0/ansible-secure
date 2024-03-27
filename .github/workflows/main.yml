@@ -26,7 +26,7 @@ jobs:
 
       - name: Install test dependencies
         run: |
-          pip install -r requirements-test.txt
+          pip install -r requirements.txt
 
       - name: Lint code
         run: |
@@ -57,7 +57,7 @@ jobs:
 
       - name: Install test dependencies
         run: |
-          pip install -r requirements-test.txt
+          pip install -r requirements.txt
 
       - name: Run Molecule tests
         run: |
