@@ -3,7 +3,7 @@
   ansible.legacy.file:
     path: /etc/ssh/sshd_config.d
     state: directory
-    mode: 0700
+    mode: "0o700"
     owner: root
     group: root
 
@@ -11,7 +11,7 @@
   ansible.legacy.template:
     src: ssh_audit_hardening.conf.j2
     dest: /etc/ssh/sshd_config.d/ssh_audit_hardening.conf
-    mode: 0600
+    mode: "0o600"
     owner: root
     group: root
     # notify: Restart sshd
