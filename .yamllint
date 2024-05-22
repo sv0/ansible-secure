@@ -1,6 +1,4 @@
 ---
-extends: default
-
 ignore: |
   tests/
   .tox
