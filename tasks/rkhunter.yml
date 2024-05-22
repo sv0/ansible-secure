@@ -1,0 +1,18 @@
+---
+- name: Install Rootkit Hunter
+  ansible.legacy.package:
+    name:
+      - rkhunter
+
+- name: Create /etc/rkhunter.d directory
+  ansible.builtin.file:
+    path: /etc/rkhunter.d
+    state: directory
+    mode: "0o700"
+
+- name: Create /etc/rkhunter.d/scriptwhitelist.conf
+  ansible.builtin.template:
+    src: rkhunter.d/scriptwhitelist.conf.j2
+    dest: /etc/rkhunter.d/scriptwhitelist.conf
+    owner: root
+    mode: "0o600"
