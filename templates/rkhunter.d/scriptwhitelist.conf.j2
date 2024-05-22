@@ -1,0 +1,5 @@
+# Allow the specified file to be a script.
+# This option may be specified more than once, and may use wildcard characters.
+{% for script in secure_rkhunter_scriptwhitelist %}
+SCRIPTWHITELIST={{ script }}
+{% endfor %}
