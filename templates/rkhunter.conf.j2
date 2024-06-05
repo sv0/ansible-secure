@@ -582,13 +582,11 @@ DISABLE_TESTS=suspscan hidden_ports hidden_procs deleted_files packet_cap_apps a
 #
 #WRITEWHITELIST=/usr/bin/date
 
-#
+
 # Allow the specified file to be a script.
-#
 # This option may be specified more than once, and may use wildcard characters.
-#
 # The default value is the null string.
-#
+
 SCRIPTWHITELIST=/bin/egrep
 SCRIPTWHITELIST=/bin/fgrep
 SCRIPTWHITELIST=/bin/which
@@ -1170,7 +1168,7 @@ SCRIPTWHITELIST=/usr/sbin/adduser
 # selected by rkhunter, but still one which it already knows about.
 # For example:
 #
-#     WEB_CMD=curl
+WEB_CMD=curl
 #
 # Alternatively, the user may specify a completely new command. However, note
 # that rkhunter expects the downloaded file to be written to stdout, and that
@@ -1185,7 +1183,7 @@ SCRIPTWHITELIST=/usr/sbin/adduser
 #
 # This option has no default value.
 #
-WEB_CMD="/bin/false"
+# WEB_CMD="/bin/false"
 
 #
 # Set the following option to '1' if locking is to be used when rkhunter runs.
