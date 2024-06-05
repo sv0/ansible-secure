@@ -25,13 +25,21 @@ platforms:
     image: "slavik0/debian-12-systemd"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      # - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /sys/fs/cgroup/debian12.scope:/sys/fs/cgroup:rw
     privileged: true
     cgroupns_mode: host
     pre_build_image: true
+    tmpfs:
+      - /run
+      - /run/lock
+      - /tmp
+
 
 provisioner:
   name: ansible
+  env:
+    ANSIBLE_REMOTE_TMP: /tmp
 
 verifier:
   name: testinfra
