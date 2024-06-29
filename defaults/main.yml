@@ -15,4 +15,4 @@ secure_chkrootkit: true
 secure_chkrootkit_ignore_pattern_list:
   - "^br-[0-9a-f]+: not promisc and no packet sniffer sockets$"
 
-secure_ssh: true
+secure_ssh: false  # do not modify ssd_config by befault
