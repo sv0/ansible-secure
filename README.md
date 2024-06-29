@@ -5,6 +5,7 @@ Secure
 
 This ansible role installs the following tools and utils to harden server security:
 
+* [chkrootkit](https://www.chkrootkit.org)
 * [Rootkit Hunter](http://rkhunter.sourceforge.net)
 
 It has been tested for the following Debian versions:
@@ -23,15 +24,18 @@ Variables
 
 ```yaml
 
-secure_rkhunter: true  # default, defines install or not rkhunter
+secure_rkhunter: true  # default value. install rkhunter
+
+```
+
+```yaml
+
+secure_chkrootkit: true  # default value. install chkrootkit
 
 ```
 
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with
-variables passed in as parameters) is always nice for users too:
 
 ```yaml
   - hosts: servers

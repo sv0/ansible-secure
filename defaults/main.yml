@@ -9,6 +9,7 @@ secure_rkhunter_scriptwhitelist:
   - /usr/bin/which
 
 # install and configure chkrootkit
+# https://www.chkrootkit.org
 secure_chkrootkit: true
 
 secure_chkrootkit_ignore_pattern_list:
