@@ -1,5 +1,5 @@
-Secure
-======
+Ansible Secure v. 0.0.1
+=======================
 
 [![CI](https://github.com/sv0/ansible-secure/actions/workflows/main.yml/badge.svg)](https://github.com/sv0/ansible-secure/actions/workflows/main.yml)
 
