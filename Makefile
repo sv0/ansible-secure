@@ -53,7 +53,7 @@ VERSION?=minor
 # target: release - Bump version
 release:
 	$(VENV)/pip install bumpversion
-	@bumpversion $(VERSION)
+	@$(VENV)/bumpversion $(VERSION)
 	@git checkout master
 	@git merge devel
 	@git checkout devel
