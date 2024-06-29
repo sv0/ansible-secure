@@ -34,6 +34,12 @@ secure_chkrootkit: true  # default value. install chkrootkit
 
 ```
 
+```yaml
+
+secure_ssh: false  # default value. do not modify ssd_config by befault
+
+```
+
 Example Playbook
 ----------------
 
