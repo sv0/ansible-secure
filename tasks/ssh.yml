@@ -14,4 +14,4 @@
     mode: "0o600"
     owner: root
     group: root
-    # notify: Restart sshd
+  notify: Restart sshd
