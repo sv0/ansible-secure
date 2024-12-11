@@ -22,9 +22,12 @@
     - secure_chkrootkit
 
 - name: Secure SSH
-  ansible.builtin.import_tasks:
+  ansible.builtin.include_tasks:
     file: ssh.yml
+    apply:
+      tags:
+        - ssh
   tags:
-    - ssh
+    - always
   when:
     - secure_ssh
