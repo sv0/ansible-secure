@@ -10,7 +10,6 @@ This ansible role installs the following tools and utils to harden server securi
 
 It has been tested for the following Debian versions:
 
-* Buster
 * Bullseye
 * Bookworm
 
