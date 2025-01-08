@@ -3,15 +3,6 @@ driver:
   name: docker
 
 platforms:
-  - name: debian-10
-    image: "slavik0/debian-10-systemd"
-    command: ${MOLECULE_DOCKER_COMMAND:-""}
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-    cgroupns_mode: host
-    pre_build_image: true
-
   - name: debian-11
     image: "slavik0/debian-11-systemd"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
