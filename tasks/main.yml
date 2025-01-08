@@ -27,6 +27,7 @@
     apply:
       tags:
         - ssh
+        - notest
   tags:
     - always
   when:
