@@ -4,4 +4,4 @@ molecule-plugins[docker]>=23.5,<26.0
 molecule>=24.2,<26.0
 pytest-testinfra>=10.1,<11.0
 pytest>=8.1,<9.0
-requests<2.32
+requests>=2.32.4
