@@ -15,3 +15,24 @@
     owner: root
     group: root
   notify: Restart ssh
+
+- name: Find vulnerable host keys
+  ansible.builtin.find:
+    paths: /etc/ssh
+    file_type: file
+    use_regex: true
+    patterns:
+      - 'ssh_host_dsa*'
+      - 'ssh_host_ecdsa*'
+      - 'ssh_host_ke*'
+  register: ssh_host_keys
+
+- name: Debug
+  ansible.builtin.debug:
+    var: ssh_host_keys
+
+- name: Remove vulnerable host ssh keys
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: absent
+  loop: "{{ ssh_host_keys.files }}"
