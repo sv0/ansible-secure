@@ -1,5 +1,5 @@
 ---
-name: CI
+name: Main workflow
 
 'on':
   pull_request:
@@ -11,7 +11,6 @@ name: CI
     - cron: '30 1 * * 3'
 
 jobs:
-
   lint:
     name: Lint
     runs-on: ubuntu-latest
@@ -68,22 +67,3 @@ jobs:
           ANSIBLE_VERBOSITY: '2'
           MOLECULE_DEBUG: '1'
           PY_COLORS: '1'
-
-  galaxy:
-    name: Galaxy
-    runs-on: ubuntu-latest
-    if:
-      contains('
-        refs/tags
-        refs/heads/master'
-      , github.ref)
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-      - name: galaxy
-        uses: robertdebock/galaxy-action@1.2.1
-        with:
-          galaxy_api_key: ${{ secrets.galaxy_api_key }}
-    needs:
-      - lint
-      - molecule
