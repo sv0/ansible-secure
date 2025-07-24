@@ -3,7 +3,7 @@ galaxy_info:
   author: Slavik Svyrydiuk
   role_name: secure
   namespace: sv0
-  description: Improve the server security
+  description: Improve server security
   company: Svyrydiuk
   issue_tracker_url: https://github.com/sv0/ansible-secure/issues
 
@@ -17,6 +17,10 @@ galaxy_info:
       versions:
         - bullseye
         - bookworm
+        - trixie
+    - name: NetBSD
+      versions:
+        - all
 
   galaxy_tags:
     - security
