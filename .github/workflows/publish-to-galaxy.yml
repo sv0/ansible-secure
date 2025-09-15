@@ -1,0 +1,25 @@
+---
+name: Galaxy Action
+
+on:  # yamllint disable-line rule:truthy
+  workflow_run:
+    workflows:
+      - "Main workflow"
+    types:
+      - completed
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+      - run: printenv
+      # - name: galaxy
+      #   uses: robertdebock/galaxy-action@1.2.1
+      #   with:
+      #     galaxy_api_key: ${{ secrets.galaxy_api_key }}
