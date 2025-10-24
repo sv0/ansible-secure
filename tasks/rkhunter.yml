@@ -16,3 +16,4 @@
     dest: /etc/rkhunter.d/scriptwhitelist.conf
     owner: root
     mode: "0o600"
+    backup: true
