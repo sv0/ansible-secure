@@ -1,0 +1,9 @@
+---
+secure_sshd_service: ssh
+
+secure_rkhunter_scriptwhitelist:
+  - /usr/bin/egrep
+  - /usr/bin/fgrep
+  - /usr/bin/which
+  # debianutils
+  - /usr/bin/which.debianutils

@@ -3,11 +3,6 @@
 # https://rkhunter.sourceforge.net/
 secure_rkhunter: true
 
-secure_rkhunter_scriptwhitelist:
-  - /usr/bin/egrep
-  - /usr/bin/fgrep
-  - /usr/bin/which
-
 # install and configure chkrootkit
 # https://www.chkrootkit.org
 secure_chkrootkit: true
@@ -16,3 +11,5 @@ secure_chkrootkit_ignore_pattern_list:
   - "^br-[0-9a-f]+: not promisc and no packet sniffer sockets$"
 
 secure_ssh: false  # do not modify ssd_config by befault
+secure_sshd_service: ssh
+secure_root_group: root
