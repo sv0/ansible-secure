@@ -1,0 +1,5 @@
+---
+secure_rkhunter: false
+secure_sshd_service: sshd
+secure_root_group: wheel
+secure_rkhunter_scriptwhitelist: []

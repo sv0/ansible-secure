@@ -1,3 +1,2 @@
 ---
-secure_ssh: true
 secure_rkhunter_scriptwhitelist: []
