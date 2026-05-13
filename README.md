@@ -16,7 +16,7 @@ It has been tested for the following Debian versions:
 Requirements
 ------------
 
-Ansible 2.14 version installed.
+Ansible 2.19 version installed.
 
 Variables
 ---------
