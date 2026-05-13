@@ -351,7 +351,7 @@ ALLOW_SSH_PROT_V1=2
 # either of the options below are specified, then they will override the
 # program defaults.
 #
-ENABLE_TESTS=ALL
+# ENABLE_TESTS=ALL
 DISABLE_TESTS=suspscan hidden_ports hidden_procs deleted_files packet_cap_apps apps
 
 #
@@ -730,7 +730,9 @@ ALLOWHIDDENFILE=/usr/share/man/man5/.containerignore.5.gz  # podman package on D
 # The default value is the null string.
 #
 #ALLOWDEVFILE=/dev/shm/pulse-shm-*
-#ALLOWDEVFILE=/dev/shm/sem.ADBE_*
+#
+# podman on Linux
+ALLOWDEVFILE=/dev/shm/libpod_*
 
 #
 # Allow the specified process pathnames to use shared memory segments.
