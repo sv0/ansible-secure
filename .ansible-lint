@@ -5,5 +5,4 @@ verbosity: 1
 exclude_paths:
   - ./.github
 
-parseable: true
 warn_list: []

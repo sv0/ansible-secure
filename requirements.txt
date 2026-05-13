@@ -1,5 +1,5 @@
 ansible-core>=2.11,<=2.19
-ansible-lint>=24.2,<26.0
+ansible-lint>=26.4,<27.0
 molecule-plugins[docker]>=23.5,<26.0
 molecule>=24.2,<26.0
 pytest-testinfra>=10.1,<11.0
