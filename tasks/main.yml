@@ -1,4 +1,17 @@
 ---
+- name: Debug ansible_os_family and ansible_distribution
+  ansible.builtin.debug:
+    msg: "Ansible runs on {{ ansible_os_family }}, {{ ansible_distribution }}."
+
+- name: Initialize distribution-specific variables
+  ansible.builtin.include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution | lower }}.yml"
+    - "{{ ansible_os_family | lower }}.yml"
+    - main.yml
+  tags:
+    - always
+
 - name: Install required packages
   ansible.legacy.package:
     name:
@@ -12,6 +25,7 @@
     - rkhunter
   when:
     - secure_rkhunter
+    - ansible_distribution != 'Alpine'
 
 - name: Import chkrootkit tasks
   ansible.builtin.import_tasks:
@@ -20,6 +34,15 @@
     - chkrootkit
   when:
     - secure_chkrootkit
+    - ansible_distribution != 'Alpine'
+
+- name: Set fact
+  ansible.builtin.set_fact:
+    ssh_dir: "{{ '/etc/ssh' is exists }}"
+
+- name: Debug
+  ansible.builtin.debug:
+    var: ssh_dir
 
 - name: Secure SSH
   ansible.builtin.include_tasks:
@@ -32,3 +55,4 @@
     - always
   when:
     - secure_ssh
+    - ssh_dir is true

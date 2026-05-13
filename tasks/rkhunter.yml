@@ -10,6 +10,14 @@
     state: directory
     mode: "0o700"
 
+- name: Create /etc/rkhunter.conf
+  ansible.builtin.template:
+    src: rkhunter.conf.j2
+    dest: /etc/rkhunter.conf
+    owner: root
+    mode: "0o600"
+    backup: true
+
 - name: Create /etc/rkhunter.d/scriptwhitelist.conf
   ansible.builtin.template:
     src: rkhunter.d/scriptwhitelist.conf.j2
