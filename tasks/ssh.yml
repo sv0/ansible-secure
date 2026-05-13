@@ -5,7 +5,7 @@
     state: directory
     mode: "0o700"
     owner: root
-    group: root
+    group: "{{ secure_root_group }}"
 
 - name: Restrict key exhcange
   ansible.legacy.template:
@@ -13,7 +13,14 @@
     dest: /etc/ssh/sshd_config.d/ssh_audit_hardening.conf
     mode: "0o600"
     owner: root
-    group: root
+    group: "{{ secure_root_group }}"
+  notify: Restart ssh
+
+- name: Ensure we have Include ssh_audit_hardening.conf
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^Include /etc/ssh/sshd_config.d/ssh_audit_hardening.conf'
+    line: 'Include /etc/ssh/sshd_config.d/ssh_audit_hardening.conf'
   notify: Restart ssh
 
 - name: Find vulnerable host keys
