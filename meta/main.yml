@@ -5,7 +5,6 @@ galaxy_info:
   namespace: sv0
   description: Improve server security
   company: Svyrydiuk
-  issue_tracker_url: https://github.com/sv0/ansible-secure/issues
 
   # valid license ID https://spdx.org
   license: MIT
@@ -15,7 +14,6 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - bullseye
         - bookworm
         - trixie
     - name: NetBSD
